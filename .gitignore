@@ -1,0 +1,15 @@
+# python
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+.idea
+dist
+build
+
+
+results
+tmp
+checkpoints
+!src/utils/nms.so
+
