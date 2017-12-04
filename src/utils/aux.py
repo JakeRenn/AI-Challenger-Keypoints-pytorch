@@ -15,11 +15,6 @@ def nms_fm(detect_fm, group_fm, point_num=14, threshold=0.2, extra_space=9):
     out_list = list()
     for idx in range(point_num):
         out_list.append([])
-    # _, height, width = detect_fm.shape
-    # assert detect_fm.shape[0] == 1
-    # assert detect_fm.shape[1] == point_num
-    # assert group_fm.shape[0] == 1
-    # assert group_fm.shape[1] == point_num
 
     cc, yy, xx = nms(detect_fm, threshold, extra_space)
     cc = cc.tolist()
@@ -67,7 +62,6 @@ def group_with_keypoint(in_list, ori_h, ori_w, cur_h, cur_w, threshold=1, min_pa
     while (any_true(check_list)):
         human_count += 1
         human_name = "human%d" % (human_count)
-        # out_dict[human_name] = [0] * point_num * 3
         tmp_coords = np.zeros(point_num * 3, dtype=np.int32).reshape(point_num, 3)
         part_count = 0
 
@@ -90,7 +84,6 @@ def group_with_keypoint(in_list, ori_h, ori_w, cur_h, cur_w, threshold=1, min_pa
                             if check_list[ii][jj]:
                                 cur_coord, sub_score, sub_tag = in_list[ii][jj]
                                 yy, xx = resize_coord(cur_coord)
-                                # print tag, sub_tag
                                 if tag_dis(tag, sub_tag) < threshold and check_list[ii][jj] and sub_score > max_score:
                                     max_score = sub_score
                                     tmp_coords[ii][0] = xx
@@ -123,11 +116,7 @@ def flip_fm(fm):
     for idx1, idx2 in left_right_pair:
         out_fm[idx1, :, :] = fm[idx2, :, :]
         out_fm[idx2, :, :] = fm[idx1, :, :]
-    # out_label[:, 12, :] = label[:, 12, :]
-    # out_label[:, 13, :] = label[:, 13, :]
-    # for idx1, idx2 in left_right_pair:
-    #     out_label[:, idx1, :] = label[:, idx2, :]
-    #     out_label[:, idx2, :] = label[:, idx1, :]
+
     out_fm = out_fm[:, :, ::-1]
     return out_fm
 
@@ -149,8 +138,6 @@ def integrate_fm_group(detect_fm_list, group_fm_list, height, width):
         resized_group_list.append(resize_fm(fm, height, width))
     out_detect_fm = sum(resized_detect_list) / len(resized_detect_list)
     out_group_fm = np.stack(resized_group_list, axis=-1)
-    #  out_detect_fm = sum(detect_fm_list) / len(detect_fm_list)
-    #  out_group_fm = np.stack(group_fm_list, axis=-1)
 
     return out_detect_fm, out_group_fm
 
@@ -164,7 +151,6 @@ def resize_fm(fm, dst_h, dst_w):
     """
     out_list = list()
     for item in fm:
-        #  out_list.append(cv2.resize(item, (dst_w, dst_h), interpolation=cv2.INTER_CUBIC))
         out_list.append(cv2.resize(item, (dst_w, dst_h)))
     output = np.stack(out_list, axis=0)
     return output

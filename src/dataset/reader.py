@@ -9,10 +9,10 @@ class TestReader(object):
 
         self.img_height = 512
         self.img_width = 512
-        self.label_height = self.img_height >> 2
-        self.label_width = self.img_width >> 2
-        self.group_height = self.img_height >> 2
-        self.group_width = self.img_width >> 2
+        self.label_height = self.img_height >> 3
+        self.label_width = self.img_width >> 3
+        self.group_height = self.img_height >> 3
+        self.group_width = self.img_width >> 3
 
         self.img_ids = list()
         self.img_paths = list()
