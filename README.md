@@ -8,9 +8,6 @@ Codes for reproducing [Associative Embedding: End-to-End Learning for Joint Dete
 <img src="https://github.com/JakeRenn/Pytorch-Multi-Person-Pose-Estimation/blob/master/media/ori_images/ski.jpg", width="300", height="300">
 &nbsp;
 <img src="https://github.com/JakeRenn/Pytorch-Multi-Person-Pose-Estimation/blob/master/pics/ski.jpg", width="300", height="300">
-&nbsp;
-<img src="https://github.com/JakeRenn/Pytorch-Multi-Person-Pose-Estimation/blob/master/pics/leaderboard.png", width="300", height="300">
-</div>
 </div>
 
 ## Contents
@@ -75,3 +72,6 @@ Detailed explanation could be found in the website [AI Challenger](https://chall
 * The time to release training codes is not decided yet.
 * The model is simplified due to GPU memory limitation. The output feature map is 8 times smaller than the input image instead.
 
+<div align='center'>
+<img src="https://github.com/JakeRenn/Pytorch-Multi-Person-Pose-Estimation/blob/master/pics/leaderboard.png", width="600", height="600">
+</div>
