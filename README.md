@@ -8,9 +8,9 @@ Codes for reproducing [Associative Embedding: End-to-End Learning for Joint Dete
 <img src="https://github.com/JakeRenn/Pytorch-Multi-Person-Pose-Estimation/blob/master/media/ori_images/ski.jpg", width="300", height="300">
 &nbsp;
 <img src="https://github.com/JakeRenn/Pytorch-Multi-Person-Pose-Estimation/blob/master/pics/ski.jpg", width="300", height="300">
-</div>
-<div align='center'>
+&nbsp;
 <img src="https://github.com/JakeRenn/Pytorch-Multi-Person-Pose-Estimation/blob/master/pics/leaderboard.jpg", width="300", height="300">
+</div>
 </div>
 
 ## Contents
