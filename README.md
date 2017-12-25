@@ -21,7 +21,7 @@ Other directories are self-explanatory
 ## Require
 
 * Python2.7
-* Opencv
+* OpenCV
 * Pytorch
 * CUDNN
 * numpy
@@ -47,7 +47,7 @@ In the same way, run
 ```
 ./scripts/visualize.sh
 ```
-to visualize results. The rendered images will be save at `./media/pre_images`
+to visualize results. The rendered images will be save at `./results/imgs`
 
 ## Output Format
 In the JSON format, results are as follow
