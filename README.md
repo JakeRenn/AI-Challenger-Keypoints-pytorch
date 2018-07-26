@@ -22,7 +22,7 @@ Other directories are self-explanatory
 
 * Python2.7
 * OpenCV
-* Pytorch
+* Pytorch v0.3.0
 * CUDNN
 * numpy
 
